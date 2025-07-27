@@ -1,0 +1,89 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: peter
+      context: local
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Alice"
+              - column:
+                  name: email
+                  value: "alice@example.com"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: "Bob"
+              - column:
+                  name: email
+                  value: "bob@example.com"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: title
+                  value: "Spring in Action"
+              - column:
+                  name: author
+                  value: "Craig Walls"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: title
+                  value: "Elasticsearch Guide"
+              - column:
+                  name: author
+                  value: "Clinton Gormley"
+
+        - insert:
+            tableName: purchases
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: user_id
+                  valueNumeric: 1
+              - column:
+                  name: book_id
+                  valueNumeric: 2
+              - column:
+                  name: purchase_date
+                  valueDate: "2025-07-27T12:00:00"
+
+        - insert:
+            tableName: purchases
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: user_id
+                  valueNumeric: 2
+              - column:
+                  name: book_id
+                  valueNumeric: 1
+              - column:
+                  name: purchase_date
+                  valueDate: "2025-07-26T14:30:00"

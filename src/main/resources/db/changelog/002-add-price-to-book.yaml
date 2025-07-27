@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: peter
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: price
+                  type: DECIMAL(10,2)
+                  defaultValueNumeric: 0.00

@@ -100,3 +100,25 @@ The system supports real-time indexing, flexible search capabilities, and transa
 ## 7. Summary
 
 This architecture ensures scalable, decoupled, and search-friendly enterprise backend services using proven open-source tools. By combining transactional MySQL storage with high-performance Elasticsearch and event-driven Kafka communication, the system can support complex read/write workloads with high availability and extensibility.
+
+## 8. Testing the apis
+
+```
+GET http://localhost:8080/api/purchases
+Accept: application/json
+
+
+###
+
+GET http://localhost:8080/api/user/2/purchases
+Accept: application/json
+
+
+###
+
+POST http://localhost:8080/api/purchase?userId=2&bookId=2
+Content-Type: application/json
+
+
+###
+```

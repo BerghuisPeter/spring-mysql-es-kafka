@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-users-books-purchases.yaml
+  - include:
+      file: db/changelog/002-add-price-to-book.yaml
+  - include:
+      file: db/changelog/003-insert-dummy-data.yaml
