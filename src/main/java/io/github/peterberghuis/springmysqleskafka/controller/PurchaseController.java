@@ -26,6 +26,11 @@ public class PurchaseController {
         return purchaseService.getUserPurchases(userId);
     }
 
+    @GetMapping("/author/purchases")
+    public List<UserPurchaseDocument> getUserPurchasesByBookAuthor(@RequestParam String bookAuthor) {
+        return purchaseService.getUserPurchasesByBookAuthor(bookAuthor);
+    }
+
     @GetMapping("/purchases")
     public List<Purchase> listPurchases() {
         return purchaseService.listAllPurchases();

@@ -60,6 +60,13 @@ public class PurchaseService {
     }
 
     /**
+     * ✅ Get purchases by book author
+     */
+    public List<UserPurchaseDocument> getUserPurchasesByBookAuthor(String bookAuthor) {
+        return esRepo.findByPurchasesBookAuthor(bookAuthor);
+    }
+
+    /**
      * ✅ Get all purchases from MySQL
      */
     public List<Purchase> listAllPurchases() {
