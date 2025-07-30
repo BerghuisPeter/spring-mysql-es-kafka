@@ -9,7 +9,6 @@ import io.github.peterberghuis.springmysqleskafka.repository.PurchaseRepository;
 import io.github.peterberghuis.springmysqleskafka.repository.UserPurchaseSearchRepository;
 import io.github.peterberghuis.springmysqleskafka.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,14 +19,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class PurchaseService {
 
-
-    private static final String TOPIC = "purchase-events";
-
     private final UserRepository userRepo;
     private final BookRepository bookRepo;
     private final PurchaseRepository purchaseRepo;
     private final UserPurchaseSearchRepository esRepo;
-    private final KafkaTemplate<String, Purchase> kafkaTemplate;
 
 
     /**
@@ -45,9 +40,6 @@ public class PurchaseService {
         purchase.setBook(book);
         purchase.setDate(LocalDate.now());
         purchaseRepo.save(purchase);
-
-        // Send purchase event to Kafka
-        kafkaTemplate.send(TOPIC, purchase);
 
         return purchase;
     }
